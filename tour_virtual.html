@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>TOUR POR ITALIA</title>
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <style>
+      #descripcion {
+        text-shadow: 0 1px 1px #000;
+      }
+    </style>
+  </head>
+  <body>
+    <a-scene sound="src: #italia; autoplay:true">
+      <a-assets>
+        <img id="I1" alt="Coliseo de Roma" src="./imagenes/Coliseo.jpg" />
+        <img id="I2" alt="Plaza de los Milagros en Pisa" src="./imagenes/Milagros.jpg" />
+        <img id="I3" alt="Plaza del Popolo en Roma" src="./imagenes/Popolo.jpg" />
+        <audio id="italia" src="./audio/italia.mp3" preload="auto"></audio>
+     
+      </a-assets>
+      <a-image src="#I1" position="-3 1.5 -3" width="2.5" height="1.5" onclick="show('I1')"></a-image>
+      <a-image src="#I2" position="0 1.5 -3" width="2.5" height="1.5" onclick="show('I2')"></a-image>
+      <a-image src="#I3" position="3 1.5 -3" width="2.5" height="1.5" onclick="show('I3')"></a-image>
+      <a-text
+        align="center"
+        font="mozillavr"
+        scale="1.4 1.4 1.4"
+        color=#02C700
+        value="TOUR"
+        position="0 3.5 -3"
+      ></a-text>
+      <a-text
+        align="center"
+        font="mozillavr"
+        scale="1.4 1.4 1.4"
+        color="White"
+        value="POR"
+        position="0 3.2 -3"
+      ></a-text>
+      <a-text
+        align="center"
+        font="mozillavr"
+        scale="1.4 1.4 1.4"
+        color="red"
+        value="ITALIA"
+        position="0 2.9 -3"
+      ></a-text>
+        <a-sphere src="./imagenes/tierra.jpg" scale="0.45 0.45 0.45" position="1.2 3 -3" material="opacity: 1" >
+        <a-animation
+        property= "rotation"
+        repeat="inde"
+        to="0 360 0"
+        loop= "true"
+        dur="5000"
+        fill="forwards"
+        repeat="indefinite"
+        >
+        </a-animation>
+      </a-sphere>
+      <a-text
+        id="descripcion"
+        align="center"
+        font="mozillavr"
+        color="White"
+        value=""
+        position="0 0.8 -3"
+        text="opacity:1;zOffset:1;yOffset:2;tabSize:4.59;lineHeight:0.53;height:2;letterSpacing:3.09;font:exo2bold"
+      ></a-text>
+      <a-sky src="#I3" id="cielo"></a-sky>
+      <a-camera>
+        <a-cursor color=#02C700></a-cursor>
+              </a-camera>
+              <a-plane
+
+      ></a-plane>
+    </a-scene>
+    <script>
+      function show(id) {
+        var valor = $("#" + id).attr("alt");
+        document.getElementById("cielo").setAttribute("src", "#" + id);
+        $("#descripcion").attr("value", "Estas en " + valor);
+      }
+    </script>
+  </body>
+</html>
