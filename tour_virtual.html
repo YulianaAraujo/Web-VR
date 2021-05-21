@@ -14,7 +14,7 @@
     </style>
   </head>
   <body>
-    <a-scene sound="src: #italia; autoplay:true">
+    <a-scene sound="src: #italia; autoplay:true; loop:true">
       <a-assets>
         <img id="I1" alt="Coliseo de Roma" src="./imagenes/Coliseo.jpg" />
         <img id="I2" alt="Plaza de los Milagros en Pisa" src="./imagenes/Milagros.jpg" />
@@ -82,7 +82,7 @@
       function show(id) {
         var valor = $("#" + id).attr("alt");
         document.getElementById("cielo").setAttribute("src", "#" + id);
-        $("#descripcion").attr("value", "Estas en " + valor);
+        $("#description").attr("value", "Usted se encuentra en" + valor);
       }
     </script>
   </body>
