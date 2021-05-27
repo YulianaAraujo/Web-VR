@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Componentes A-FRAME</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="/Component/ColorComponets.js"></script>
+</head>
+<body>
+    <a-scene>
+      <a-sky color="black"></a-sky>
+
+      <!--Se crea el plano-->
+      <a-plane
+        position="0 0 -4"
+        rotation="-90 0 0"
+        width="10"
+        height="5"
+        color="white"
+      ></a-plane>
+
+      <!--Se crea la caja-->
+      <a-box
+        colores="defaultColor"
+        scale="1.4 1.4 1.4"
+        position="0 1.2 -3"
+        rotation="-150 50 -30"
+        color="white"
+      ></a-box>
+      
+    </a-scene>
+  </body>
+  </html>
